@@ -8,6 +8,9 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.cursorline = true
 
+-- Disable hererocks
+--opts.rocks.hererocks = false
+
 -- Limit stuff to 80 chars
 
 vim.wo.wrap = true

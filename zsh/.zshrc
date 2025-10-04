@@ -60,10 +60,7 @@ zplug load --verbose
 
 # Binaries
 export PATH="/usr/local/bin:/usr/bin:/bin"  # Add core system paths explicitly
-export PATH="$HOME/Programming/BashScripts:$PATH"
-export PATH="/opt/llvm-19/bin:$PATH"
-export PATH="$HOME/personal/Work/toolchainRL78/17rl78/llvm-for-renesas-rl78/bin:$PATH"
-export PATH="$HOME/personal/Work/build/bin:$PATH"
-
+export PATH="/usr/local/bin:$PATH"
+export PATH="$HOME/BashScript:$PATH"
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
