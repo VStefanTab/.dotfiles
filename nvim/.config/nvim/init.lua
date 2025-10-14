@@ -8,6 +8,10 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.cursorline = true
 
+
+-- Yank to Clipboard
+vim.cmd("set clipboard+=unnamedplus")
+
 -- Disable hererocks
 --opts.rocks.hererocks = false
 
@@ -137,7 +141,7 @@ end
 
 vim.keymap.set(
   "n",
-  "<Leader>m",
+  "<Leader>z",
   ToggleFullscreen,
   { noremap = true, silent = true }
 ) -- Maximize fullscreen

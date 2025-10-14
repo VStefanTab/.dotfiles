@@ -1,4 +1,4 @@
-command_timeout = 2000  # milliseconds, so 2 seconds or whatever feels right
+command_timeout = 5000  # milliseconds, so 2 seconds or whatever feels right
 
 
 [aws]
