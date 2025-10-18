@@ -6,6 +6,16 @@ eval "$(starship init zsh)"
 # Set up fzf key bindings and fuzzy completion
 # source <(fzf --zsh)
 
+# History
+setopt inc_append_history
+setopt share_history
+setopt histignorealldups sharehistory
+# Keep 5000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=5000
+SAVEHIST=5000
+HISTFILE=~/.zsh_history
+
+
 # Aliases
 alias ls='ls --color=auto'
 alias ll='ls -lah --color=auto'
@@ -26,12 +36,7 @@ cf() {
   dir=$(find . -type d | fzf --preview="ls -lah --color=always {}") && cd "$dir"
 }
 
-setopt histignorealldups sharehistory
 
-# Keep 5000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=5000
-SAVEHIST=5000
-HISTFILE=~/.zsh_history
 
 # Use modern completion system
 autoload -Uz compinit
