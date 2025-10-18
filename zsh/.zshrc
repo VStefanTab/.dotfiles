@@ -200,5 +200,6 @@ cf() {
 export PATH="/usr/local/bin:/usr/bin:/bin"  # Add core system paths explicitly
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/BashScript:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
