@@ -151,14 +151,27 @@ SAVEHIST=5000
 HISTFILE=~/.zsh_history
 
 # Aliases
-alias ls='ls --color=auto'
-alias ll='ls -lah --color=auto'
-alias grep='grep --color=auto'
+if command -v eza &>/dev/null; then
+    alias ls='eza -l --header'
+    alias ll='eza -la --git --git-repos --header'
+else
+    alias ls='ls --color=auto'
+    alias ll='ls -lah --color=auto'
+fi
+
+if command -v rg  &>/dev/null; then
+    alias grep='rg'
+else
+    alias grep='grep --color=auto'
+fi
+
 alias ec="$EDITOR $HOME/.zshrc"  # edit .zshrc
 alias sc="source $HOME/.zshrc"  # reload zsh configuration
+
 if command -v bat &>/dev/null; then
   alias fzf='fzf --preview="bat --color=always {}"'
 fi
+
 alias clr='clear'
 alias em="emacs -nw"
 # Ensure no alias conflicts
