@@ -160,7 +160,7 @@ if command -v bat &>/dev/null; then
   alias fzf='fzf --preview="bat --color=always {}"'
 fi
 alias clr='clear'
-alias em="emacsclient -c -a 'emacs'"
+alias em="emacs -nw"
 # Ensure no alias conflicts
 unalias cf 2>/dev/null
 
