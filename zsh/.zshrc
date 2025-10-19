@@ -160,7 +160,7 @@ if command -v bat &>/dev/null; then
   alias fzf='fzf --preview="bat --color=always {}"'
 fi
 alias clr='clear'
-
+alias em="emacsclient -c -a 'emacs'"
 # Ensure no alias conflicts
 unalias cf 2>/dev/null
 
@@ -198,7 +198,6 @@ cf() {
 
 # Binaries
 export PATH="/usr/local/bin:/usr/bin:/bin"  # Add core system paths explicitly
-export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/BashScript:$PATH"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 # Use emacs keybindings even if our EDITOR is set to vi
