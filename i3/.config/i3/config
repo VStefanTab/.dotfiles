@@ -137,7 +137,10 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+# bindsym $mod+Shift+d focus child
+
+# run emacs
+bindsym $mod+t exec emacsclient -c -a "emacs"
 
 ### MONITORS variables
 ## fm, sm are just some names...they don't matter that much
