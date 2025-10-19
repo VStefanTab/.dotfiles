@@ -152,7 +152,7 @@ HISTFILE=~/.zsh_history
 
 # Aliases
 if command -v eza &>/dev/null; then
-    alias ls='eza --header'
+    alias ls='eza'
     alias ll='eza -la --git --git-repos --header'
 else
     alias ls='ls --color=auto'
