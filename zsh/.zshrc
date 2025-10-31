@@ -189,6 +189,9 @@ cf() {
 
 # Binaries
 export PATH="/usr/local/bin:/usr/bin:/bin"  # Add core system paths explicitly
+if [ ! -z $(ls -A "$HOME/Downloads/LSPs") ];then
+    export PATH="$HOME/Downloads/LSPs:$PATH"
+fi
 export PATH="$HOME/BashScript:$PATH"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 # Use emacs keybindings even if our EDITOR is set to vi
