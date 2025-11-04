@@ -187,12 +187,40 @@ cf() {
 #autoload -Uz compinit
 #compinit
 
-# Binaries
-export PATH="/usr/local/bin:/usr/bin:/bin"  # Add core system paths explicitly
-if [ ! -z $(ls -A "$HOME/Downloads/LSPs") ];then
-    export PATH="$HOME/Downloads/LSPs:$PATH"
-fi
-export PATH="$HOME/BashScript:$PATH"
-export PATH="$HOME/.emacs.d/bin:$PATH"
+# PATH
+INSTALLS_DIR="$HOME/personal/Installs"
+
+LSP_DIR="$HOME/Downloads/LSPs"
+BASHSCRIPTS_DIR="$HOME/BashScripts"
+EMACS_BIN="$HOME/.emacs.d/bin"
+
+# Binaries installed from the scripts
+NODE_DIR="$INSTALLS_DIR/NodeJS/Nodes"
+
+add_to_path_if_nonempty(){
+  local dir="$1"
+  if [[ -d "$dir" && -n $(ls -A "$dir" 2>/dev/null) ]]; then
+      export PATH="$dir:$PATH"
+    else
+      echo "$dir doesn't exist or is empty"
+      echo "$(ls -A "$dir" 2>/dev/null)"
+  fi
+}
+
+for dir in \
+  "$LSP_DIR" \
+  "$NODE_DIR" \
+  "$BASHSCRIPTS_DIR" \
+  "$EMACS_BIN" 
+do
+  add_to_path_if_nonempty "$dir"
+done
+
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
+
+# Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
