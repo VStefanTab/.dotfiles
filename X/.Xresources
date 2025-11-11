@@ -1,0 +1,11 @@
+! --- Font and DPI ---
+Xft.dpi: 144
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+
+! --- URxvt terminal colors (optional) ---
+! --- URxvt.font: xft:monospace:size=12
+! --- URxvt.scrollBar: false
+! --- URxvt.internalBorder: 8

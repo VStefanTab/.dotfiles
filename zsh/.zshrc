@@ -189,18 +189,22 @@ cf() {
 
 # PATH
 INSTALLS_DIR="$HOME/personal/Installs"
-
 LSP_DIR="$HOME/Downloads/LSPs"
 BASHSCRIPTS_DIR="$HOME/BashScripts"
 EMACS_BIN="$HOME/.emacs.d/bin"
-
+NPM_BINS="$HOME/personal/Installs/NodeJS/Nodes/out/bin"
+YAZI_BIN="$HOME/personal/Downloads/YAZI/yazi"
 # Binaries installed from the scripts
-NODE_DIR="$INSTALLS_DIR/NodeJS/Nodes"
+# ----- To be added -----
 
+
+# Function to add only if non-empty and not already in PATH
 add_to_path_if_nonempty(){
   local dir="$1"
   if [[ -d "$dir" && -n $(ls -A "$dir" 2>/dev/null) ]]; then
-      export PATH="$dir:$PATH"
+    if [[ ":$PATH:" != *":$dir:"* ]]; then
+            export PATH="$dir:$PATH"
+    fi
     else
       echo "$dir doesn't exist or is empty"
       echo "$(ls -A "$dir" 2>/dev/null)"
@@ -209,9 +213,10 @@ add_to_path_if_nonempty(){
 
 for dir in \
   "$LSP_DIR" \
-  "$NODE_DIR" \
   "$BASHSCRIPTS_DIR" \
-  "$EMACS_BIN" 
+  "$EMACS_BIN" \
+  "$NPM_BINS" \
+  "$YAZI_BIN"
 do
   add_to_path_if_nonempty "$dir"
 done
