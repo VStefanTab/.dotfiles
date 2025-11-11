@@ -1,3 +1,6 @@
 # use '.' to toggle hidden and not-hidden
 [mgr]
-show_hidden = false
+show_hidden = true
+
+[opener]
+text = [{ run = 'nvim "$@"', block = true }]

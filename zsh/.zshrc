@@ -150,6 +150,10 @@ HISTSIZE=5000
 SAVEHIST=5000
 HISTFILE=~/.zsh_history
 
+if command -v nvim &>/dev/null; then
+  export EDITOR=nvim
+fi
+
 # Aliases
 if command -v eza &>/dev/null; then
     alias ls='eza'
@@ -170,6 +174,10 @@ alias sc="source $HOME/.zshrc"  # reload zsh configuration
 
 if command -v bat &>/dev/null; then
   alias fzf='fzf --preview="bat --color=always {}"'
+fi
+
+if command -v yazi &>/dev/null; then
+	alias y='yazi'
 fi
 
 alias clr='clear'
