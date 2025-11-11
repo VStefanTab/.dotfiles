@@ -13,7 +13,7 @@ return {
 				},
 				pickers = {
 					find_files = {
-						hidden = true, -- Show hidden files
+						hidden = false, -- Show hidden files
 					},
 				},
 			})
