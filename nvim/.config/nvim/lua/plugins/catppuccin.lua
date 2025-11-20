@@ -2,22 +2,51 @@ return {
   "catppuccin/nvim",
   name = "catppuccin",
   priority = 1000,
-  config = function()
-    -- Set the Catppuccin flavor (e.g., "mocha", "macchiato", "frappe", "latte")
-    vim.g.catppuccin_flavour = "mocha" -- You can change this to your preferred flavor
-
-    require("catppuccin").setup({
-      custom_highlights = {
-        -- Customize line numbers
-        LineNr = { fg = "#be9225" },   -- Change line numbers to this color
-        CursorLineNr = { fg = "#25be92" }, -- Change cursor line number to this color
-
-        -- Customize comments
-        Comment = { fg = "#bc8dbc", italic = true }, -- Change comment color and make it italic (optional)
+  opts = {
+    term_colors = true,
+    transparent_background = true,
+    dim_inactive = {
+      enabled = false, -- dims the background color of inactive window
+      shade = "dark",
+      percentage = 0.15, -- percentage of the shade to apply to the inactive window
+    },
+    integrations = {
+      cmp = true,
+      gitsigns = true,
+      treesitter = true,
+      harpoon = true,
+      telescope = true,
+      mason = true,
+      noice = true,
+      notify = true,
+      which_key = true,
+      fidget = true,
+      native_lsp = {
+        enabled = true,
+        virtual_text = {
+          errors = { "italic" },
+          hints = { "italic" },
+          warnings = { "italic" },
+          information = { "italic" },
+        },
+        underlines = {
+          errors = { "underline" },
+          hints = { "underline" },
+          warnings = { "underline" },
+          information = { "underline" },
+        },
+        inlay_hints = {
+          background = true,
+        },
       },
-    })
-
-    -- Apply the colorscheme
-    vim.cmd.colorscheme("catppuccin")
+      mini = {
+        enabled = true,
+        indentscope_color = "",
+      },
+    },
+  },
+  config = function(_, opts)
+    require("catppuccin").setup(opts)
+    vim.cmd.colorscheme("catppuccin-macchiato")
   end,
 }
