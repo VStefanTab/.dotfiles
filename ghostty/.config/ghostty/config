@@ -49,3 +49,4 @@
 # resize-overlay-duration = 4s 200ms
 window-decoration = none
 app-notifications = no-clipboard-copy
+background-opacity = 0.2
