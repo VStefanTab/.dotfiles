@@ -48,5 +48,10 @@ return {
   config = function(_, opts)
     require("catppuccin").setup(opts)
     vim.cmd.colorscheme("catppuccin-macchiato")
+    -- Normal line numbers
+    vim.api.nvim_set_hl(0, "LineNr", { fg = "#A05DD0"})
+
+    -- Current line number (CursorLineNr)
+    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#A3008D", bold = true })
   end,
 }
