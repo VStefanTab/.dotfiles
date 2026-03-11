@@ -163,6 +163,11 @@ else
     alias ll='ls -lah --color=auto'
 fi
 
+if command -v xclip &>/dev/null; then
+    alias "c=xclip"
+    alias "v=xclip -o"
+fi
+
 if command -v rg  &>/dev/null; then
     alias grep='rg'
 else
@@ -204,6 +209,7 @@ dirs=(
 "$HOME/personal/Installs/NodeJS/Nodes/out/bin"
 "$HOME/personal/Downloads/YAZI/yazi"
 "$HOME/.cargo/bin"
+"/opt/lua-language-server/lua-language-server/bin"
 )
 # Function to add only if non-empty and not already in PATH
 add_to_path_if_nonempty(){

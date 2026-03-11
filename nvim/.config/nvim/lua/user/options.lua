@@ -18,8 +18,8 @@ vim.opt.clipboard:append("unnamedplus")
 --opts.rocks.hererocks = false
 
 -- Limit stuff to 80 chars
-vim.opt.colorcolumn = "80"       -- Visual guide at 80 characters
-vim.opt.textwidth = 80           -- Auto-wrap text at 80 characters while typing
+vim.opt.colorcolumn = "80"      -- Visual guide at 80 characters
+vim.opt.textwidth = 80          -- Auto-wrap text at 80 characters while typing
 vim.cmd("set formatoptions+=t") -- Ensure automatic wrapping while typing
 
 -- Enable Treesitter folding
@@ -37,3 +37,6 @@ vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- Optional: Set fold level (how deeply the folds should be open by default)
 vim.o.foldlevel = 99
+
+-- Wait less for terminal key codes
+vim.opt.ttimeoutlen = 0
