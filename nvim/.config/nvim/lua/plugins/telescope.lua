@@ -13,9 +13,9 @@ return {
 				defaults = {
 					file_ignore_patterns = {
 						".git/.*",
-                        "node_modules/.*",
-                        "lazy-lock.json",
-                        "yarn.lock"
+						"node_modules/.*",
+						"lazy-lock.json",
+						"yarn.lock",
 					}, -- Ignore .git directory
 					preview = {
 						treesitter = false,
@@ -30,12 +30,6 @@ return {
 			local builtin = require("telescope.builtin")
 
 			vim.keymap.set("n", "<C-p>", builtin.find_files, {})
-			--			vim.keymap.set(
-			--				"n",
-			--				"<leader>fg",
-			--				"<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-			--				{ desc = "Live Grep" }
-			--			)
 			vim.keymap.set("n", "<leader>fc", builtin.live_grep, {})
 			vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, {})
 			vim.keymap.set("n", "<leader>fw", builtin.grep_string, {})
