@@ -5,6 +5,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.wrap = true
+vim.opt.signcolumn = "yes"
 
 -- Enable line numbers and relative numbers
 vim.opt.number = true
@@ -18,8 +19,8 @@ vim.opt.clipboard:append("unnamedplus")
 --opts.rocks.hererocks = false
 
 -- Limit stuff to 80 chars
-vim.opt.colorcolumn = "80"      -- Visual guide at 80 characters
-vim.opt.textwidth = 80          -- Auto-wrap text at 80 characters while typing
+vim.opt.colorcolumn = "80" -- Visual guide at 80 characters
+vim.opt.textwidth = 80 -- Auto-wrap text at 80 characters while typing
 vim.cmd("set formatoptions+=t") -- Ensure automatic wrapping while typing
 
 -- Enable Treesitter folding
