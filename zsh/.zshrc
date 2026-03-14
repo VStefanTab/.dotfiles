@@ -179,6 +179,7 @@ alias sc="source $HOME/.zshrc"  # reload zsh configuration
 
 if command -v bat &>/dev/null; then
   alias fzf='fzf --preview="bat --color=always {}"'
+  alias cat='bat --color=always'
 fi
 
 if command -v yazi &>/dev/null; then
