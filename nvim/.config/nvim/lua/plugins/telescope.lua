@@ -16,7 +16,7 @@ return {
 						"node_modules/.*",
 						"lazy-lock.json",
 						"yarn.lock",
-                        ".*env/"
+						".*env/",
 					}, -- Ignore .git directory
 					preview = {
 						treesitter = false,
@@ -45,12 +45,32 @@ return {
 			vim.keymap.set("n", "<leader>fo", builtin.oldfiles, {})
 			vim.keymap.set("n", "<leader>fr", builtin.registers, {})
 			vim.keymap.set("n", "<leader>fk", builtin.keymaps, {})
-			vim.keymap.set("n", "<leader>fe", function ()
-			    local ext = vim.fn.input("Extension: ")
-                require("telescope.builtin").find_files({
-                    find_command = {"rg", "--files", "--hidden", "--glob", "*." .. ext},
-                })
-			end, {desc = "Find files by extensions"})
+			vim.keymap.set("n", "<leader>fe", function()
+				local ext = vim.fn.input("Extension: ")
+				require("telescope.builtin").find_files({
+					find_command = {
+						"rg",
+						"--files",
+						"--hidden",
+						"--glob",
+						"*." .. ext,
+					},
+				})
+			end, { desc = "Find files by extensions" })
+            
+            -- TODO: Don't work yet
+			vim.keymap.set(
+				"n",
+				"<leader>fl",
+				"<cmd>Telescope diagnostics<cr>",
+				{ buffer = 0 }
+			)
+			vim.keymap.set(
+				"n",
+				"<leader>ff",
+				builtin.lsp_references,
+				{ buffer = 0 }
+			)
 		end,
 	},
 	{
