@@ -16,6 +16,7 @@ return {
 						"node_modules/.*",
 						"lazy-lock.json",
 						"yarn.lock",
+                        ".*env/"
 					}, -- Ignore .git directory
 					preview = {
 						treesitter = false,
