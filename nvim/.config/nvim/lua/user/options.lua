@@ -6,6 +6,7 @@ vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.wrap = true
 vim.opt.signcolumn = "yes"
+vim.opt.termguicolors = true
 
 -- Enable line numbers and relative numbers
 vim.opt.number = true
@@ -41,3 +42,17 @@ vim.o.foldlevel = 99
 
 -- Wait less for terminal key codes
 vim.opt.ttimeoutlen = 0
+
+-- Behaviour settings
+vim.opt.errorbells = false
+vim.opt.encoding = "UTF-8"
+vim.opt.backspace = "indent,eol,start"
+
+-- File handling
+vim.opt.updatetime = 300
+vim.opt.undofile = true
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.swapfile = false
+vim.opt.autowrite = false
+vim.opt.autoread = true
