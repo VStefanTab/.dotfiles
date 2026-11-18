@@ -25,7 +25,7 @@ vim.opt.textwidth = 80 -- Auto-wrap text at 80 characters while typing
 vim.cmd("set formatoptions+=t") -- Ensure automatic wrapping while typing
 
 -- Enable Treesitter folding
--- Keybind(already defined)
+-- Keybinds(already defined)
 -- za toggle a fold at the cursor.
 -- zo opens a fold at the cursor.
 -- zO opens all folds at the cursor.

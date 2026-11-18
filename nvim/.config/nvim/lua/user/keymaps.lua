@@ -4,10 +4,10 @@ vim.g.mapleader = " "
 -- LSP keybinds
 -- gd - go to definition
 -- gD - go to Declaration
--- gr - go to referece (TODO: need to fix because it is replacing)
+-- grr - go to referece
 -- K - hover documentation (Awesome)
--- gi - go to implementation
--- <leader>ca - code actions(TODO:Need to work on it)
+-- gri - go to implementation
+-- gra - code actions
 
 -- gc : Comment line
 
@@ -15,8 +15,11 @@ vim.g.mapleader = " "
 -- :%s/search_word/replace_word/g
 -- :%s/search_word/replace_word/gc -> this is for confirmation
 
--- Terminal Exit
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
+-- Terminal Open (TODO: doesn't work)
+-- vim.keymap.set("n", ":terminal", "tt", {noremap = true, silent = true})
+
+-- Terminal Exit (TODO: doesn't work)
+-- vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
 
 -- Moving half screen down/up
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
@@ -140,9 +143,21 @@ vim.keymap.set(
 	{ noremap = true, silent = true }
 )
 
+-- Keybinds for edit config
+vim.keymap.set("n", "<leader>ev", function()
+    vim.cmd("edit $MYVIMRC")end, {desc= "Edit nvim config"}
+)
+
 -- TODO: Make a keybind to close the current one and leave the others
 
 -- TODO: Make keybinds for tabs
+-- gt - Goes to the next tab
+-- gT - Goes to the previous tab
+-- {n}gt - Goes to the {n} tab
+-- shortcuts to be made:
+-- 1. create new tab
+-- 2. close current tab
+-- 3. close other tabs
 
 -- TODO: Make keybind for copen
 
